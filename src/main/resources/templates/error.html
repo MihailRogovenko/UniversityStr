@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>Error 404 - Unauthorized</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+  </head>
+  <body>
+    <div class="container" style="text-align: center">
+      <!-- Шапка -->
+      <div
+        class="header"
+        style="
+          margin-bottom: 30px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        "
+      >
+        <h1 style="color: #000000; font-size: 2rem">An Error Occured</h1>
+      </div>
+
+      <!-- Повідомлення про помилку -->
+      <h2 style="color: #555; font-size: 1.5rem; margin-bottom: 20px">
+        You've encountered an error during your e-venture.
+      </h2>
+      <p style="color: #777; font-size: 1rem; margin-bottom: 30px">
+        You can return to the homepage or try to log in if you still haven't.
+      </p>
+
+      <!-- Навігація -->
+      <div class="navigation">
+        <a th:href="@{/login}" class="button" style="margin-right: 10px"
+          >Login</a
+        >
+        <a th:href="@{/home}" class="button" style="margin-right: 10px">Home</a>
+      </div>
+    </div>
+  </body>
+</html>

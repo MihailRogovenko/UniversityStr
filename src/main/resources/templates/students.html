@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>Students</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Students</h1>
+      <a href="/students/add" class="button">Add Student</a>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Group</th>
+            <th>Enrollment Year</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr th:each="student : ${students}">
+            <td th:text="${student.studentId}"></td>
+            <td th:text="${student.name}"></td>
+            <td th:text="${student.group.name}"></td>
+            <td th:text="${student.enrollmentYear}"></td>
+            <td>
+              <a
+                th:href="@{/students/edit/{id}(id=${student.studentId})}"
+                class="button edit"
+                >Edit</a
+              >
+              <a
+                th:href="@{/students/delete/{id}(id=${student.studentId})}"
+                class="button delete"
+                >Delete</a
+              >
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <a href="/home" class="button back">Back to Home</a>
+    </div>
+  </body>
+</html>
